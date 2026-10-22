@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -17,7 +16,10 @@
             <div class="logo">
                 <a class="logo-a" href="">
                     <img class="logo_logotype" src="{% static '/main/img/X.png' %}" alt="">
-                    <p>Project<span>X</span></p>
+                    <p>
+                        Project
+                        <span>X</span>
+                    </p>
                 </a>
             </div>
             <div class="content">
@@ -26,7 +28,9 @@
                     <a href="">О сайте</a>
                     <a href="">Поддержка</a>
                 </div>
-                <button class="content_button"><p>Регистрация/Вход</p></button>
+                <a href="{% url 'log' %}" class="content_button">
+                    <p>Вход</p>
+                </a>
             </div>
         </nav>
         <main>
@@ -41,11 +45,10 @@
                             <span>e</span>
                             <span>c</span>
                             <span>t</span>
-                            <span>X</span> 
+                            <span>X</span>
                         </div>
                         <span class="s">Space</span>
                     </div>
-                    
                     <div class="content_text">
                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin.</p>
                     </div>
@@ -74,7 +77,10 @@
             </div>
             <div class="level">
                 <div class="title">
-                    <p>Уровни <span>обучения</span></p>
+                    <p>
+                        Уровни
+                        <span>обучения</span>
+                    </p>
                 </div>
                 <div class="cards">
                     <div class="card card-1">
@@ -301,7 +307,8 @@
                 <div class="general">
                     <div class="general_logo">
                         <img src="{% static '/main/img/X.png' %}" alt="">
-                        <p class="general_title">Project
+                        <p class="general_title">
+                            Project
                             <span>X</span>
                         </p>
                     </div>

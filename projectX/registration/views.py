@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def reg(request):
+    return render(request, 'registration/registration.html')
+
+
+def log(request):
+    return render(request, 'registration/log.html')

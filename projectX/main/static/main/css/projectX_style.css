@@ -76,6 +76,9 @@ nav .content_button {
   background-color: #fff;
   border: 1px solid #989898;
   color: #6F6E6E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 8px;
   font-size: inherit;
   position: relative;

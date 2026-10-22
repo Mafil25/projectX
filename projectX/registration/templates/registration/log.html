@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{%static '/registration/css/reset.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{%static '/registration/css/log_style.css' %}">
+        <title>Registration</title>
+    </head>
+    <body>
+        <div class="logo">
+            <div class="title">
+                <img src="{%static '/registration/img/X-big.png' %}" alt="">
+                <p>
+                    Project
+                    <span>X</span>
+                </p>
+            </div>
+            <div class="text">Lorem Ipsum has been the industry's</div>
+        </div>
+        <main>
+            <div class="title">Вход</div>
+            <div class="line"></div>
+            <div class="info info-2">
+                <div class="input-email">
+                    <p>Почта</p>
+                    <input type="text">
+                </div>
+                <div class="input-password">
+                    <p>Пароль</p>
+                    <input type="text">
+                </div>
+            </div>
+            <a href="{% url 'main' %}" class="content_button">
+                <p>Вход</p>
+            </a>
+        </main>
+        <footer>
+            <div class="text"><a href="{% url 'reg' %}" >Регистрация</a></div>
+        </footer>
+    </body>
+</html>
