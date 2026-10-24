@@ -548,7 +548,7 @@ nav .content_button:hover p {
 /* ________ */
 
 
-.level button {
+.level .card-btn {
   margin-top: 20px;
   padding: 0 20px;
   width: 100%;
@@ -566,7 +566,7 @@ nav .content_button:hover p {
 
 /* ____ */
 
-.level button::before {
+.level .card-btn::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -576,40 +576,40 @@ nav .content_button:hover p {
   transition: 0.3s ease;
 }
 
-.level button:hover::before {
+.level .card-btn:hover::before {
   width: 100%;
 }
 
-.level button p {
+.level .card-btn p {
   position: relative;
   z-index: 1;
   transition: 0.15s ease;
 }
 
-.level button:hover p {
+.level .card-btn:hover p {
   color: #D0D0D0;
 }
 
 /* ___ */
 
-.level button p {
+.level .card-btn p {
   position: relative;
   z-index: 1;
   transition: 0.15s ease;
 }
 
-.level .card-2 button:hover p {
+.level .card-2 .card-btn:hover p {
   color: #282626;
 }
 
 /* ___ */
 
-.level .card-2 button {
+.level .card-2 .card-btn {
   background-color: #404040;
   color: #989898;
 }
 
-.level .card-2 button::before {
+.level .card-2 .card-btn::before {
   background-color: #EAE9E9;
 }
 

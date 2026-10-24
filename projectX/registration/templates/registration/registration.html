@@ -14,7 +14,7 @@
     <body>
         <div class="logo">
             <div class="title">
-                <img src="img/X-big.png" alt="">
+                <img src="{%static 'registration/img/X-big.png' %}" alt="">
                 <p>
                     Project
                     <span>X</span>
@@ -25,34 +25,33 @@
         <main>
             <div class="title">Регистрация</div>
             <div class="line"></div>
-            <div class="info info-1">
-                <div class="input-name">
-                    <p>Имя</p>
-                    <input type="text">
+            <form action="{% url 'reg' %}" method="post">
+                {% csrf_token %}
+                <div class="info info-1">
+                    <div class="input-name">
+                        <p>Имя пользователя</p>
+                        <input type="text" name="username">
+                    </div>
+                    <div class="input-group">
+                        <p>Группа</p>
+                        <input type="text" name="group">
+                    </div>
                 </div>
-                <div class="input-surname">
-                    <p>Фамилия</p>
-                    <input type="text">
+                <div class="line line-2"></div>
+                <div class="info info-2">
+                    <div class="input-email">
+                        <p>Почта</p>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="input-password">
+                        <p>Пароль</p>
+                        <input type="password" name="password">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <p>Группа</p>
-                    <input type="text">
-                </div>
-            </div>
-            <div class="line line-2"></div>
-            <div class="info info-2">
-                <div class="input-email">
-                    <p>Почта</p>
-                    <input type="text">
-                </div>
-                <div class="input-password">
-                    <p>Пароль</p>
-                    <input type="text">
-                </div>
-            </div>
-            <a href="{% url 'main' %}" class="content_button">
-                <p>Регистрация</p>
-            </a>
+                <h1>{{message}}</h1>
+                <button type="submit" class="content_button">Регистрация</button>
+                
+            </form>
         </main>
         <footer>
             <div class="text">Lorem Ipsum has been the industry's</div>

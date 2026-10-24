@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path("", views.main, name="main"),
-    path("log/", include("registration.urls")),
+    path("page/", include("task.urls"))
 
 ]
