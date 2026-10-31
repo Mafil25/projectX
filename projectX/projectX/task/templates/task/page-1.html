@@ -1,0 +1,468 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'task/css/reset.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'task/css/page-1_style.css' %}">
+
+    <title>{{ task.title }}</title>
+</head>
+
+<body>
+<main>
+    <div class="general">
+
+        <!-- ВЕРХНЯЯ ЧАСТЬ -->
+        <div class="go_back">
+            <button class="back" type="button" onclick="history.back()">
+                <img src="{% static 'task/img/Arrow-right.png' %}" alt="">
+                <p>Назад к темам</p>
+            </button>
+
+            <div class="theme">
+                <img src="{% static 'task/img/circle-1.png' %}" alt="">
+                <p>TOPIC | OTHER</p>
+            </div>
+        </div>
+
+        <!-- НАЗВАНИЕ И ОПИСАНИЕ -->
+        <div class="topic">
+            <div class="title">
+                {{ task.title }} <span>Topic</span>
+            </div>
+
+            <div class="text">
+                {{ task.description|linebreaksbr }}
+            </div>
+        </div>
+
+        <!-- КАРТОЧКИ -->
+        <div class="cards">
+            <div class="card card-1">
+                <img src="{% static 'task/img/circle-1.png' %}" alt="">
+                <div class="content">
+                    <p class="title">Develop</p>
+                    <p class="text">Develop</p>
+                </div>
+            </div>
+
+            <div class="card card-2">
+                <img src="{% static 'task/img/sqr.png' %}" alt="">
+                <div class="content">
+                    <p class="title">Develop</p>
+                    <p class="text">What is this...</p>
+                </div>
+            </div>
+
+            <div class="card card-3">
+                <img src="{% static 'task/img/sqr.png' %}" alt="">
+                <div class="content">
+                    <p class="title">Develop</p>
+                    <p class="text">What is this...</p>
+                </div>
+            </div>
+
+            <div class="card card-4">
+                <img src="{% static 'task/img/sqr.png' %}" alt="">
+                <div class="content">
+                    <p class="title">Develop</p>
+                    <p class="text">What is this...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <!-- PYTHON КОМПИЛЯТОР -->
+        <div class="interpritator">
+
+            <!-- РЕДАКТОР -->
+            <div class="main">
+                <div class="editor-header">
+                    <span>Python Editor</span>
+                    <span><span id="editor-state">Загрузка редактора...</span> · Python 3</span>
+                </div>
+
+                <div id="python-code" aria-label="Редактор Python"></div>
+                <textarea id="python-code-fallback" spellcheck="false" aria-label="Резервный редактор Python" hidden>a, b = map(int, input().split())
+print(a + b)</textarea>
+
+                <div class="editor-buttons">
+                    <button
+                        type="button"
+                        id="run-button"
+                        onclick="runCode()"
+                    >
+                        ▶ Запустить
+                    </button>
+
+                    <button
+                        type="button"
+                        id="check-button"
+                        onclick="checkCode()"
+                    >
+                        ✓ Проверить задание
+                    </button>
+                </div>
+            </div>
+
+            <!-- ВВОД ДАННЫХ -->
+            <div class="input">
+                <h3>Входные данные (Input)</h3>
+
+                <textarea
+                    id="python-input"
+                    placeholder="Введите данные для input()"
+                >2 3</textarea>
+            </div>
+
+            <!-- ВЫВОД ПРОГРАММЫ -->
+            <div class="output">
+                <h3>Результат (Output)</h3>
+
+                <pre id="python-output">Здесь появится результат выполнения программы...</pre>
+            </div>
+
+            <!-- ПРОВЕРКА ТЕСТОВ -->
+            <div class="test-results">
+                <h3>Проверка задания</h3>
+
+                <div id="test-status">
+                    {% if progress.is_completed %}
+                        ✅ Задание выполнено
+                    {% else %}
+                        Задание ещё не выполнено
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+        <!-- НИЖНЯЯ ЧАСТЬ -->
+        <div class="topic">
+            <div class="text">
+                Напишите программу на Python и проверьте
+                её правильность с помощью автоматических тестов.
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card card-1">
+                <img src="{% static 'task/img/sqr.png' %}" alt="">
+                <div class="content">
+                    <p class="title">Develop</p>
+                    <p class="text">What is this...</p>
+                </div>
+            </div>
+
+            <div class="card card-2">
+                <img src="{% static 'task/img/sqr.png' %}" alt="">
+                <div class="content">
+                    <p class="title">Develop</p>
+                    <p class="text">What is this...</p>
+                </div>
+            </div>
+
+            <div class="card card-3">
+                <img src="{% static 'task/img/sqr.png' %}" alt="">
+                <div class="content">
+                    <p class="title">Develop</p>
+                    <p class="text">What is this...</p>
+                </div>
+            </div>
+
+            <div class="card card-4">
+                <img src="{% static 'task/img/sqr.png' %}" alt="">
+                <div class="content">
+                    <p class="title">Develop</p>
+                    <p class="text">What is this...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="line line-2"></div>
+
+    </div>
+
+    <!-- БОКОВАЯ ПАНЕЛЬ -->
+    <div class="sidebar">
+        <div class="title"></div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</main>
+
+<form id="csrf-form" style="display:none;">
+    {% csrf_token %}
+</form>
+
+{{ task.tests|json_script:"task-tests" }}
+
+<!-- Monaco Editor: подсветка Python, строки, автoотступы -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+<script>
+    const monacoBase = "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs";
+    const initialCode = "a, b = map(int, input().split())\nprint(a + b)";
+    let monacoEditor = null;
+
+    // Если CDN недоступен, пользователь всё равно сможет писать в textarea.
+    function enableFallback() {
+        document.getElementById("python-code").hidden = true;
+        const fallback = document.getElementById("python-code-fallback");
+        fallback.hidden = false;
+        fallback.value = initialCode;
+        document.getElementById("editor-state").textContent = "Простой редактор";
+    }
+
+    if (typeof window.require === "function") {
+        window.require.config({paths: {vs: monacoBase}});
+        window.MonacoEnvironment = {
+            getWorkerUrl: function () {
+                // Monaco запускает собственные редакторские Workers через прокси.
+                const source = `self.MonacoEnvironment = {baseUrl: '${monacoBase}/'}; importScripts('${monacoBase}/base/worker/workerMain.js');`;
+                return URL.createObjectURL(new Blob([source], {type: 'text/javascript'}));
+            }
+        };
+        window.require(["vs/editor/editor.main"], function () {
+            monacoEditor = monaco.editor.create(document.getElementById("python-code"), {
+                value: initialCode,
+                language: "python",
+                theme: "vs-dark",
+                automaticLayout: true,
+                minimap: {enabled: false},
+                fontSize: 16,
+                lineHeight: 25,
+                fontFamily: "Consolas, 'Courier New', monospace",
+                fontLigatures: true,
+                tabSize: 4,
+                insertSpaces: true,
+                wordWrap: "on",
+                scrollBeyondLastLine: false,
+                padding: {top: 16, bottom: 16},
+                smoothScrolling: true
+            });
+            document.getElementById("editor-state").textContent = "Monaco Editor";
+        }, enableFallback);
+    } else {
+        enableFallback();
+    }
+
+    function getPythonCode() {
+        return monacoEditor
+            ? monacoEditor.getValue()
+            : document.getElementById("python-code-fallback").value;
+    }
+</script>
+
+<script>
+    const tests = JSON.parse(document.getElementById("task-tests").textContent);
+
+    const workerUrl = "{% static 'task/js/python-worker.js' %}";
+    const completeUrl = "{% url 'task_complete' task.pk %}";
+
+    const inputEditor = document.getElementById("python-input");
+    const outputElement = document.getElementById("python-output");
+    const testStatus = document.getElementById("test-status");
+
+    const runButton = document.getElementById("run-button");
+    const checkButton = document.getElementById("check-button");
+
+    let busy = false;
+
+    function setBusy(value) {
+        busy = value;
+        runButton.disabled = value;
+        checkButton.disabled = value;
+    }
+
+    // ОЖИДАНИЕ ОТВЕТА ОТ PYODIDE
+    function waitForMessage(worker, timeout = 5000) {
+        return new Promise((resolve, reject) => {
+            const timer = setTimeout(() => {
+                cleanup();
+                reject(new Error("Превышено время выполнения"));
+            }, timeout);
+
+            function cleanup() {
+                clearTimeout(timer);
+                worker.removeEventListener("message", onMessage);
+                worker.removeEventListener("error", onError);
+            }
+
+            function onMessage(event) {
+                cleanup();
+
+                if (event.data.type === "error") {
+                    reject(new Error(
+                        event.data.message || "Ошибка Python"
+                    ));
+                } else {
+                    resolve(event.data);
+                }
+            }
+
+            function onError(event) {
+                cleanup();
+                reject(new Error(
+                    event.message || "Ошибка Web Worker"
+                ));
+            }
+
+            worker.addEventListener("message", onMessage);
+            worker.addEventListener("error", onError);
+        });
+    }
+
+    // СОЗДАНИЕ PYTHON WORKER
+    async function createPythonWorker() {
+        const worker = new Worker(workerUrl);
+
+        try {
+            const response = await waitForMessage(worker, 60000);
+
+            if (response.type !== "ready") {
+                throw new Error("Не удалось загрузить Python");
+            }
+
+            return worker;
+        } catch (error) {
+            worker.terminate();
+            throw error;
+        }
+    }
+
+    // ВЫПОЛНЕНИЕ PYTHON-КОДА
+    async function executePython(worker, code, input) {
+        const resultPromise = waitForMessage(worker, 5000);
+
+        worker.postMessage({
+            type: "run",
+            code: code,
+            input: input
+        });
+
+        const response = await resultPromise;
+
+        if (response.type !== "result") {
+            throw new Error("Неожиданный ответ Python");
+        }
+
+        return response.output;
+    }
+
+    // КНОПКА ЗАПУСТИТЬ
+    async function runCode() {
+        if (busy) return;
+
+        setBusy(true);
+        outputElement.textContent = "Загрузка Python...";
+
+        let worker = null;
+
+        try {
+            worker = await createPythonWorker();
+
+            const output = await executePython(
+                worker,
+                getPythonCode(),
+                inputEditor.value
+            );
+
+            outputElement.textContent =
+                output || "Программа завершилась без вывода.";
+
+        } catch (error) {
+            outputElement.textContent = "❌ " + error.message;
+        } finally {
+            if (worker) worker.terminate();
+            setBusy(false);
+        }
+    }
+
+    // Проверка всех тестов через Pyodide, без Judge0
+    async function checkCode() {
+        if (busy) return;
+        setBusy(true);
+        const code = getPythonCode();
+        let passed = 0;
+        testStatus.textContent = "Подготовка проверки...";
+
+        try {
+            if (!Array.isArray(tests) || tests.length === 0) {
+                testStatus.textContent = "Для задания не заданы тесты.";
+                return;
+            }
+
+            for (let i = 0; i < tests.length; i++) {
+                const test = tests[i];
+                if (typeof test.input !== 'string' || typeof test.output !== 'string') {
+                    throw new Error(`Неверный формат теста ${i + 1}`);
+                }
+                let worker = null;
+                try {
+                    testStatus.textContent = `Проверка ${i + 1}/${tests.length}...`;
+                    // Отдельный Worker исключает передачу состояния программы между тестами
+                    worker = await createPythonWorker();
+                    const output = await executePython(worker, code, test.input);
+                    const actual = output.trim();
+                    const expected = test.output.trim();
+                    if (actual !== expected) {
+                        testStatus.textContent =
+                            `❌ Тест ${i + 1} не пройден\n` +
+                            `Вход: ${test.input}\n` +
+                            `Ожидалось: ${expected}\n` +
+                            `Получено: ${actual}`;
+                        return;
+                    }
+                    passed++;
+                } catch (error) {
+                    testStatus.textContent = `❌ Тест ${i + 1}: ${error.message}`;
+                    return;
+                } finally {
+                    if (worker) worker.terminate();
+                }
+            }
+
+            testStatus.textContent = `✅ Пройдено ${passed}/${tests.length} тестов`;
+            const response = await fetch(completeUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": document.querySelector(
+                        "[name=csrfmiddlewaretoken]"
+                    ).value
+                },
+                body: JSON.stringify({passed: true})
+            });
+            if (response.ok) {
+                testStatus.textContent += "\n✅ Прогресс сохранён!";
+            } else {
+                testStatus.textContent += "\n❌ Не удалось сохранить прогресс";
+            }
+        } catch (error) {
+            testStatus.textContent = "❌ " + error.message;
+        } finally {
+            setBusy(false);
+        }
+    }
+
+</script>
+
+</body>
+</html>
