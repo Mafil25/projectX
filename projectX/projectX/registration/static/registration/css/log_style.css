@@ -60,18 +60,8 @@ main .line {
   margin: 18px 0 24px 0;
 }
 
-main .line-2 {
-  margin-top: 30px;
-}
 
 /* _________ */
-
-main .info-1 {
-  display: grid;
-  grid: repeat(2, 70px) / 1fr 1fr;
-  column-gap: 40px;
-  row-gap: 20px;
-}
 
 main .info input {
   width: 100%;
@@ -84,24 +74,33 @@ main .info input {
   color: #535151;
 }
 
+main .info input:-webkit-autofill,
+main .info input:-webkit-autofill:hover,
+main .info input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #f1f1f0 inset;
+  -webkit-text-fill-color: #535151;
+}
+
+
 main .info div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: #989898;
   font-weight: 500;
+  height: 70px;
 }
 
-main .info-2 {
+main .info {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-main .info-2 div {
-  height: 70px;
-}
 
+main .info input.err {
+  border: 1px solid #df4d50;
+}
 
 
 /* __________ */
@@ -120,6 +119,11 @@ main .content_button {
   border: none;
   cursor: pointer;
   font-family: inherit;
+}
+
+main .content_error {
+  color: #df4d50;
+  margin-top: 10px;
 }
 
 /* _____________________________ */

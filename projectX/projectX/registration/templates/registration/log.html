@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{%static 'registration/css/log_style.css' %}">
         <title>Registration</title>
     </head>
-    <body>
+    <body> 
         <div class="logo">
             <div class="title">
                 <img src="{%static 'registration/img/X-big.png' %}" alt="">
@@ -35,16 +35,17 @@
                     <div class="input-password">
                         <p>Пароль</p>
                         <input name= "password" type="password">
-                    </div>
+                    </div> 
                 </div>
-                
+                <h1 class="content_error">{{message}}</h1>
                 <button type=submit class="content_button">Вход</button>
-                <h1>{{message}}</h1>
+                
             </form>
             
         </main>
         <footer>
             <div class="text"><a href="{% url 'reg' %}" >Регистрация</a></div>
         </footer>
+        <script src="{% static 'registration/js/log_js.js' %}"></script>
     </body>
 </html>
