@@ -25,30 +25,36 @@
         <main>
             <div class="title">Регистрация</div>
             <div class="line"></div>
-            <form action="{% url 'reg' %}" method="post">
+            <form action="{% url 'reg' %}" method="post" novalidate>
                 {% csrf_token %}
                 <div class="info info-1">
                     <div class="input-name">
                         <p>Имя пользователя</p>
-                        <input type="text" name="username">
+                        <input type="text" name="username" value="{{ username }}">
                     </div>
                     <div class="input-group">
                         <p>Группа</p>
-                        <input type="text" name="group">
+                        <input type="text" name="group" value="{{ group }}">
                     </div>
                 </div>
                 <div class="line line-2"></div>
                 <div class="info info-2">
                     <div class="input-email">
                         <p>Почта</p>
-                        <input type="text" name="email">
+                        {{ form.email }}
+                        <ul class="field-errors" id="email-errors" data-field-error="email" role="alert" {% if not form.email.errors %}hidden{% endif %}>
+                            {% for error in form.email.errors %}<li>{{ error }}</li>{% endfor %}
+                        </ul>
                     </div>
                     <div class="input-password">
                         <p>Пароль</p>
-                        <input type="password" name="password">
+                        {{ form.password }}
+                        <ul class="field-errors" id="password-errors" data-field-error="password" role="alert" {% if not form.password.errors %}hidden{% endif %}>
+                            {% for error in form.password.errors %}<li>{{ error }}</li>{% endfor %}
+                        </ul>
                     </div>
                 </div>
-                <h1>{{message}}</h1>
+                <h1 class="content_error">{{message}}</h1>
                 <button type="submit" class="content_button">Регистрация</button>
                 
             </form>
@@ -56,5 +62,6 @@
         <footer>
             <div class="text">Lorem Ipsum has been the industry's</div>
         </footer>
+        <script src="{% static 'registration/js/log_js.js' %}"></script>
     </body>
 </html>

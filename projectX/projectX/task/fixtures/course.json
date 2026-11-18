@@ -1,0 +1,3475 @@
+[
+{
+  "model": "task.level",
+  "pk": 1,
+  "fields": {
+    "title": "Сумма двух чисел",
+    "description": "Напишите функцию add(a, b), которая принимает два числа и возвращает их сумму.\r\n\r\nФункция должна использовать return, а не print.",
+    "number": 1
+  }
+},
+{
+  "model": "task.level",
+  "pk": 2,
+  "fields": {
+    "title": "Чётное или нечётное",
+    "description": "Напишите функцию is_even(n), которая принимает целое число и возвращает True, если число чётное, и False, если нечётное.\r\n\r\nЧисло 0 считается чётным.",
+    "number": 2
+  }
+},
+{
+  "model": "task.level",
+  "pk": 3,
+  "fields": {
+    "title": "Максимум из трёх чисел",
+    "description": "Напишите функцию find_max(a, b, c), которая принимает три числа и возвращает наибольшее из них.\r\n\r\nЧисла могут быть отрицательными или одинаковыми.",
+    "number": 3
+  }
+},
+{
+  "model": "task.level",
+  "pk": 4,
+  "fields": {
+    "title": "Сумма элементов списка",
+    "description": "Напишите функцию sum_list(numbers), которая принимает список чисел и возвращает сумму всех его элементов.\r\n\r\nЕсли список пустой, функция должна возвращать 0.",
+    "number": 4
+  }
+},
+{
+  "model": "task.level",
+  "pk": 5,
+  "fields": {
+    "title": "Факториал числа",
+    "description": "Напишите функцию factorial(n), которая принимает неотрицательное целое число и возвращает его факториал.\r\n\r\nФакториал — произведение всех целых чисел от 1 до n.\r\n\r\nПо определению факториал 0 равен 1.",
+    "number": 5
+  }
+},
+{
+  "model": "task.level",
+  "pk": 6,
+  "fields": {
+    "title": "Проверка палиндрома",
+    "description": "Напишите функцию is_palindrome(text), которая принимает строку и возвращает True, если она одинаково читается слева направо и справа налево, иначе False.\r\n\r\nУчитывайте регистр букв, пробелы и знаки препинания. Пустая строка считается палиндромом.",
+    "number": 6
+  }
+},
+{
+  "model": "task.level",
+  "pk": 7,
+  "fields": {
+    "title": "Удаление повторяющихся элементов",
+    "description": "Напишите функцию remove_duplicates(numbers), которая принимает список целых чисел и возвращает новый список без повторений.\r\n\r\nПорядок первого появления каждого элемента должен сохраняться.\r\n\r\nЕсли список пустой, верните пустой список.",
+    "number": 7
+  }
+},
+{
+  "model": "task.level",
+  "pk": 8,
+  "fields": {
+    "title": "Подсчёт символов в строке",
+    "description": "Напишите функцию char_count(text), которая принимает строку и возвращает словарь.\r\n\r\nКлючами словаря должны быть символы строки, а значениями — количество появлений каждого символа.\r\n\r\nУчитывайте регистр, пробелы и другие символы.",
+    "number": 8
+  }
+},
+{
+  "model": "task.level",
+  "pk": 9,
+  "fields": {
+    "title": "Проверка простого числа",
+    "description": "Напишите функцию is_prime(n), которая принимает целое число и возвращает True, если оно простое, иначе False.\r\n\r\nПростое число — натуральное число больше 1, имеющее ровно два положительных делителя: 1 и само себя.\r\n\r\nЧисла меньше 2 не являются простыми.",
+    "number": 9
+  }
+},
+{
+  "model": "task.level",
+  "pk": 10,
+  "fields": {
+    "title": "Поиск двух чисел с заданной суммой",
+    "description": "Напишите функцию two_sum(numbers, target), которая принимает список целых чисел и целевую сумму.\r\n\r\nНайдите два разных элемента списка, сумма которых равна target, и верните их индексы в виде списка [i, j], где i меньше j.\r\n\r\nЕсли подходящей пары нет, верните [].\r\n\r\nЕсли существует несколько пар, выберите пару с наименьшим вторым индексом j. Если таких несколько — с наименьшим первым индексом i.",
+    "number": 10
+  }
+},
+{
+  "model": "task.task",
+  "pk": 1,
+  "fields": {
+    "title": "Сумма двух чисел",
+    "description": "Напишите функцию add(a, b).\n\nВерните сумму двух целых чисел.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: add(2, 3) → 5",
+    "number": 1,
+    "function_name": "add",
+    "starter_code": "def add(a, b):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          2,
+          3
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          -5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          100,
+          200
+        ],
+        "expected": 300
+      },
+      {
+        "input": [
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          -10,
+          -20
+        ],
+        "expected": -30
+      },
+      {
+        "input": [
+          17,
+          29
+        ],
+        "expected": 46
+      }
+    ],
+    "level": 1
+  }
+},
+{
+  "model": "task.task",
+  "pk": 2,
+  "fields": {
+    "title": "Сумма трёх чисел",
+    "description": "Напишите функцию add_three(a, b, c).\n\nВерните сумму трёх целых чисел.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: add_three(1, 2, 3) → 6",
+    "number": 2,
+    "function_name": "add_three",
+    "starter_code": "def add_three(a, b, c):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          -1,
+          -2,
+          -3
+        ],
+        "expected": -6
+      },
+      {
+        "input": [
+          -5,
+          2,
+          3
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          100,
+          200,
+          300
+        ],
+        "expected": 600
+      },
+      {
+        "input": [
+          7,
+          -10,
+          2
+        ],
+        "expected": -1
+      }
+    ],
+    "level": 1
+  }
+},
+{
+  "model": "task.task",
+  "pk": 3,
+  "fields": {
+    "title": "Сумма цифр",
+    "description": "Напишите функцию sum_digits(n).\n\nВерните сумму десятичных цифр целого числа n. Знак минус не учитывается.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: sum_digits(123) → 6",
+    "number": 3,
+    "function_name": "sum_digits",
+    "starter_code": "def sum_digits(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          123
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          -405
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          1000
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          99999
+        ],
+        "expected": 45
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7
+      }
+    ],
+    "level": 1
+  }
+},
+{
+  "model": "task.task",
+  "pk": 4,
+  "fields": {
+    "title": "Сумма чисел на отрезке",
+    "description": "Напишите функцию sum_range(a, b).\n\nВерните сумму всех целых чисел между a и b включительно. Границы могут идти в любом порядке.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: sum_range(1, 5) → 15",
+    "number": 4,
+    "function_name": "sum_range",
+    "starter_code": "def sum_range(a, b):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          1,
+          5
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          5,
+          1
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          -3,
+          3
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          4,
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          -5,
+          -2
+        ],
+        "expected": -14
+      },
+      {
+        "input": [
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    ],
+    "level": 1
+  }
+},
+{
+  "model": "task.task",
+  "pk": 5,
+  "fields": {
+    "title": "Сумма кратных чисел",
+    "description": "Напишите функцию sum_multiples(n, k).\n\nВерните сумму положительных чисел от 1 до n включительно, делящихся на k без остатка. n ≥ 0, k > 0.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: sum_multiples(10, 3) → 18",
+    "number": 5,
+    "function_name": "sum_multiples",
+    "starter_code": "def sum_multiples(n, k):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          10,
+          3
+        ],
+        "expected": 18
+      },
+      {
+        "input": [
+          0,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          10
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          1
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          12,
+          4
+        ],
+        "expected": 24
+      },
+      {
+        "input": [
+          20,
+          5
+        ],
+        "expected": 50
+      }
+    ],
+    "level": 1
+  }
+},
+{
+  "model": "task.task",
+  "pk": 6,
+  "fields": {
+    "title": "Чётное или нечётное",
+    "description": "Напишите функцию is_even(n).\n\nВерните True, если целое число n чётное, иначе False. Ноль считается чётным.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: is_even(2) → True",
+    "number": 1,
+    "function_name": "is_even",
+    "starter_code": "def is_even(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          2
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          -4
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          -9
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          1001
+        ],
+        "expected": false
+      }
+    ],
+    "level": 2
+  }
+},
+{
+  "model": "task.task",
+  "pk": 7,
+  "fields": {
+    "title": "Название чётности",
+    "description": "Напишите функцию parity_label(n).\n\nДля чётного целого числа верните строку \"even\", для нечётного — \"odd\".\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: parity_label(2) → 'even'",
+    "number": 2,
+    "function_name": "parity_label",
+    "starter_code": "def parity_label(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          2
+        ],
+        "expected": "even"
+      },
+      {
+        "input": [
+          3
+        ],
+        "expected": "odd"
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": "even"
+      },
+      {
+        "input": [
+          -8
+        ],
+        "expected": "even"
+      },
+      {
+        "input": [
+          -7
+        ],
+        "expected": "odd"
+      },
+      {
+        "input": [
+          101
+        ],
+        "expected": "odd"
+      }
+    ],
+    "level": 2
+  }
+},
+{
+  "model": "task.task",
+  "pk": 8,
+  "fields": {
+    "title": "Количество чётных чисел",
+    "description": "Напишите функцию count_even(numbers).\n\nВерните количество чётных чисел в списке целых чисел. Пустой список даёт 0.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: count_even([1, 2, 3, 4]) → 2",
+    "number": 3,
+    "function_name": "count_even",
+    "starter_code": "def count_even(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            -4,
+            -3,
+            -2
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "expected": 3
+      }
+    ],
+    "level": 2
+  }
+},
+{
+  "model": "task.task",
+  "pk": 9,
+  "fields": {
+    "title": "Список чётных чисел",
+    "description": "Напишите функцию even_numbers(numbers).\n\nВерните новый список только из чётных элементов, сохранив их порядок и повторы.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: even_numbers([1, 2, 3, 4]) → [2, 4]",
+    "number": 4,
+    "function_name": "even_numbers",
+    "starter_code": "def even_numbers(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          2,
+          4
+        ]
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            0,
+            -2,
+            3
+          ]
+        ],
+        "expected": [
+          0,
+          -2
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            2,
+            2,
+            4
+          ]
+        ],
+        "expected": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "input": [
+          [
+            -5,
+            -4,
+            -3
+          ]
+        ],
+        "expected": [
+          -4
+        ]
+      }
+    ],
+    "level": 2
+  }
+},
+{
+  "model": "task.task",
+  "pk": 10,
+  "fields": {
+    "title": "Одинаковая чётность",
+    "description": "Напишите функцию same_parity(a, b).\n\nВерните True, если два целых числа имеют одинаковую чётность, иначе False.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: same_parity(2, 4) → True",
+    "number": 5,
+    "function_name": "same_parity",
+    "starter_code": "def same_parity(a, b):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          2,
+          4
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          1,
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          2,
+          3
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          0,
+          -2
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          -3,
+          5
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          -4,
+          -1
+        ],
+        "expected": false
+      }
+    ],
+    "level": 2
+  }
+},
+{
+  "model": "task.task",
+  "pk": 11,
+  "fields": {
+    "title": "Максимум из трёх чисел",
+    "description": "Напишите функцию find_max(a, b, c).\n\nВерните наибольшее из трёх целых чисел. Числа могут совпадать или быть отрицательными.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: find_max(4, 12, 7) → 12",
+    "number": 1,
+    "function_name": "find_max",
+    "starter_code": "def find_max(a, b, c):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          4,
+          12,
+          7
+        ],
+        "expected": 12
+      },
+      {
+        "input": [
+          10,
+          5,
+          3
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          1,
+          2,
+          9
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          -5,
+          -2,
+          -8
+        ],
+        "expected": -2
+      },
+      {
+        "input": [
+          7,
+          7,
+          7
+        ],
+        "expected": 7
+      },
+      {
+        "input": [
+          0,
+          -1,
+          0
+        ],
+        "expected": 0
+      }
+    ],
+    "level": 3
+  }
+},
+{
+  "model": "task.task",
+  "pk": 12,
+  "fields": {
+    "title": "Максимум списка",
+    "description": "Напишите функцию max_list(numbers).\n\nВерните максимальный элемент непустого списка целых чисел.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: max_list([1, 7, 3]) → 7",
+    "number": 2,
+    "function_name": "max_list",
+    "starter_code": "def max_list(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            7,
+            3
+          ]
+        ],
+        "expected": 7
+      },
+      {
+        "input": [
+          [
+            -9,
+            -2,
+            -5
+          ]
+        ],
+        "expected": -2
+      },
+      {
+        "input": [
+          [
+            4
+          ]
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          [
+            0,
+            0
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            8,
+            8,
+            1
+          ]
+        ],
+        "expected": 8
+      },
+      {
+        "input": [
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "expected": 3
+      }
+    ],
+    "level": 3
+  }
+},
+{
+  "model": "task.task",
+  "pk": 13,
+  "fields": {
+    "title": "Наибольший модуль",
+    "description": "Напишите функцию max_absolute(numbers).\n\nВерните наибольший модуль среди элементов непустого списка. Например, для [-8, 3] ответ 8, а не -8.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: max_absolute([-8, 3]) → 8",
+    "number": 3,
+    "function_name": "max_absolute",
+    "starter_code": "def max_absolute(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            -8,
+            3
+          ]
+        ],
+        "expected": 8
+      },
+      {
+        "input": [
+          [
+            0
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            -2,
+            -10,
+            -3
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            4,
+            -4
+          ]
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            -100
+          ]
+        ],
+        "expected": 100
+      }
+    ],
+    "level": 3
+  }
+},
+{
+  "model": "task.task",
+  "pk": 14,
+  "fields": {
+    "title": "Индекс максимума",
+    "description": "Напишите функцию index_of_max(numbers).\n\nВерните индекс первого максимального элемента. Индексы начинаются с 0. Для пустого списка верните -1.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: index_of_max([1, 9, 3]) → 1",
+    "number": 4,
+    "function_name": "index_of_max",
+    "starter_code": "def index_of_max(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            9,
+            3
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            5,
+            5,
+            1
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            -5,
+            -2,
+            -2
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            8
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": 2
+      }
+    ],
+    "level": 3
+  }
+},
+{
+  "model": "task.task",
+  "pk": 15,
+  "fields": {
+    "title": "Второй различный максимум",
+    "description": "Напишите функцию second_largest(numbers).\n\nВерните второй по величине различный элемент списка. Если различных значений меньше двух, верните None.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: second_largest([5, 1, 5, 3]) → 3",
+    "number": 5,
+    "function_name": "second_largest",
+    "starter_code": "def second_largest(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            5,
+            1,
+            5,
+            3
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            7,
+            7
+          ]
+        ],
+        "expected": null
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": null
+      },
+      {
+        "input": [
+          [
+            -5,
+            -1,
+            -3
+          ]
+        ],
+        "expected": -3
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            0,
+            -1,
+            0
+          ]
+        ],
+        "expected": -1
+      }
+    ],
+    "level": 3
+  }
+},
+{
+  "model": "task.task",
+  "pk": 16,
+  "fields": {
+    "title": "Сумма элементов списка",
+    "description": "Напишите функцию sum_list(numbers).\n\nВерните сумму всех элементов списка целых чисел. Сумма пустого списка равна 0.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: sum_list([1, 2, 3, 4]) → 10",
+    "number": 1,
+    "function_name": "sum_list",
+    "starter_code": "def sum_list(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ]
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            -1,
+            -2,
+            -3
+          ]
+        ],
+        "expected": -6
+      },
+      {
+        "input": [
+          [
+            10,
+            -10,
+            20
+          ]
+        ],
+        "expected": 20
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "expected": 0
+      }
+    ],
+    "level": 4
+  }
+},
+{
+  "model": "task.task",
+  "pk": 17,
+  "fields": {
+    "title": "Сумма положительных элементов",
+    "description": "Напишите функцию sum_positive(numbers).\n\nВерните сумму только положительных элементов списка. Ноль не является положительным.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: sum_positive([-2, 3, 0, 5]) → 8",
+    "number": 2,
+    "function_name": "sum_positive",
+    "starter_code": "def sum_positive(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            -2,
+            3,
+            0,
+            5
+          ]
+        ],
+        "expected": 8
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            -1,
+            -2
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            0
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            -10,
+            7,
+            -3,
+            7
+          ]
+        ],
+        "expected": 14
+      }
+    ],
+    "level": 4
+  }
+},
+{
+  "model": "task.task",
+  "pk": 18,
+  "fields": {
+    "title": "Сумма на чётных индексах",
+    "description": "Напишите функцию sum_even_positions(numbers).\n\nВерните сумму элементов с индексами 0, 2, 4 и так далее. Проверяется чётность индекса, а не значения.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: sum_even_positions([10, 20, 30, 40, 50]) → 90",
+    "number": 3,
+    "function_name": "sum_even_positions",
+    "starter_code": "def sum_even_positions(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            10,
+            20,
+            30,
+            40,
+            50
+          ]
+        ],
+        "expected": 90
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            7
+          ]
+        ],
+        "expected": 7
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            -1,
+            10,
+            -3,
+            20
+          ]
+        ],
+        "expected": -4
+      },
+      {
+        "input": [
+          [
+            0,
+            5,
+            0
+          ]
+        ],
+        "expected": 0
+      }
+    ],
+    "level": 4
+  }
+},
+{
+  "model": "task.task",
+  "pk": 19,
+  "fields": {
+    "title": "Накопленные суммы",
+    "description": "Напишите функцию prefix_sums(numbers).\n\nВерните список накопленных сумм: элемент i равен сумме исходных элементов с 0 по i включительно.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: prefix_sums([1, 2, 3]) → [1, 3, 6]",
+    "number": 4,
+    "function_name": "prefix_sums",
+    "starter_code": "def prefix_sums(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          3,
+          6
+        ]
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5
+          ]
+        ],
+        "expected": [
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            3,
+            -3,
+            2
+          ]
+        ],
+        "expected": [
+          3,
+          0,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            0,
+            0
+          ]
+        ],
+        "expected": [
+          0,
+          0
+        ]
+      },
+      {
+        "input": [
+          [
+            -1,
+            -2,
+            -3
+          ]
+        ],
+        "expected": [
+          -1,
+          -3,
+          -6
+        ]
+      }
+    ],
+    "level": 4
+  }
+},
+{
+  "model": "task.task",
+  "pk": 20,
+  "fields": {
+    "title": "Максимальная сумма окна",
+    "description": "Напишите функцию max_window_sum(numbers, k).\n\nВерните наибольшую сумму k соседних элементов. Список непустой, 1 ≤ k ≤ длина списка.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: max_window_sum([1, 4, 2, 7], 2) → 9",
+    "number": 5,
+    "function_name": "max_window_sum",
+    "starter_code": "def max_window_sum(numbers, k):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            4,
+            2,
+            7
+          ],
+          2
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            -5,
+            -2,
+            -8
+          ],
+          2
+        ],
+        "expected": -7
+      },
+      {
+        "input": [
+          [
+            3,
+            1,
+            9
+          ],
+          1
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            0
+          ],
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5,
+            -10,
+            6,
+            7
+          ],
+          2
+        ],
+        "expected": 13
+      }
+    ],
+    "level": 4
+  }
+},
+{
+  "model": "task.task",
+  "pk": 21,
+  "fields": {
+    "title": "Факториал числа",
+    "description": "Напишите функцию factorial(n).\n\nВерните факториал целого числа n, 0 ≤ n ≤ 12. По определению 0! = 1.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: factorial(0) → 1",
+    "number": 1,
+    "function_name": "factorial",
+    "starter_code": "def factorial(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          0
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": 120
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 5040
+      },
+      {
+        "input": [
+          10
+        ],
+        "expected": 3628800
+      }
+    ],
+    "level": 5
+  }
+},
+{
+  "model": "task.task",
+  "pk": 22,
+  "fields": {
+    "title": "Таблица факториалов",
+    "description": "Напишите функцию factorials_up_to(n).\n\nВерните список [0!, 1!, ..., n!]. Целое n находится в диапазоне от 0 до 12.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: factorials_up_to(3) → [1, 1, 2, 6]",
+    "number": 2,
+    "function_name": "factorials_up_to",
+    "starter_code": "def factorials_up_to(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          3
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          6
+        ]
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": [
+          1
+        ]
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": [
+          1,
+          1
+        ]
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          6,
+          24,
+          120
+        ]
+      },
+      {
+        "input": [
+          2
+        ],
+        "expected": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          4
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          6,
+          24
+        ]
+      }
+    ],
+    "level": 5
+  }
+},
+{
+  "model": "task.task",
+  "pk": 23,
+  "fields": {
+    "title": "Нули в конце факториала",
+    "description": "Напишите функцию trailing_zeros(n).\n\nВерните количество нулей в конце десятичной записи n!. 0 ≤ n ≤ 10000. Для 0! ответ 0.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: trailing_zeros(5) → 1",
+    "number": 3,
+    "function_name": "trailing_zeros",
+    "starter_code": "def trailing_zeros(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          5
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          4
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          10
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          25
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          100
+        ],
+        "expected": 24
+      },
+      {
+        "input": [
+          1000
+        ],
+        "expected": 249
+      }
+    ],
+    "level": 5
+  }
+},
+{
+  "model": "task.task",
+  "pk": 24,
+  "fields": {
+    "title": "Количество размещений",
+    "description": "Напишите функцию permutations(n, k).\n\nВерните n! / (n-k)! как целое число — количество способов выбрать и упорядочить k элементов из n. 0 ≤ k ≤ n ≤ 12.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: permutations(5, 2) → 20",
+    "number": 4,
+    "function_name": "permutations",
+    "starter_code": "def permutations(n, k):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          5,
+          2
+        ],
+        "expected": 20
+      },
+      {
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          4,
+          0
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          4,
+          4
+        ],
+        "expected": 24
+      },
+      {
+        "input": [
+          6,
+          3
+        ],
+        "expected": 120
+      },
+      {
+        "input": [
+          3,
+          1
+        ],
+        "expected": 3
+      }
+    ],
+    "level": 5
+  }
+},
+{
+  "model": "task.task",
+  "pk": 25,
+  "fields": {
+    "title": "Количество сочетаний",
+    "description": "Напишите функцию combinations(n, k).\n\nВерните n! / (k! × (n-k)!) как целое число — количество способов выбрать k элементов из n без учёта порядка. 0 ≤ k ≤ n ≤ 20.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: combinations(5, 2) → 10",
+    "number": 5,
+    "function_name": "combinations",
+    "starter_code": "def combinations(n, k):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          5,
+          2
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          7,
+          0
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          7,
+          7
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          6,
+          3
+        ],
+        "expected": 20
+      },
+      {
+        "input": [
+          20,
+          10
+        ],
+        "expected": 184756
+      }
+    ],
+    "level": 5
+  }
+},
+{
+  "model": "task.task",
+  "pk": 26,
+  "fields": {
+    "title": "Проверка палиндрома",
+    "description": "Напишите функцию is_palindrome(text).\n\nВерните True, если строка одинаково читается слева направо и справа налево, иначе False. Учитывайте регистр, пробелы и знаки препинания. Пустая строка — палиндром.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: is_palindrome('level') → True",
+    "number": 1,
+    "function_name": "is_palindrome",
+    "starter_code": "def is_palindrome(text):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          "level"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "python"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "radar"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          ""
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "Level"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1221"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "ab ba"
+        ],
+        "expected": true
+      }
+    ],
+    "level": 6
+  }
+},
+{
+  "model": "task.task",
+  "pk": 27,
+  "fields": {
+    "title": "Палиндром без пробелов и знаков",
+    "description": "Напишите функцию normalized_palindrome(text).\n\nОставьте в строке только буквы и цифры (str.isalnum), переведите их в нижний регистр (str.lower) и проверьте палиндром. После очистки пустая строка считается палиндромом.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: normalized_palindrome('А роза упала на лапу Азора') → True",
+    "number": 2,
+    "function_name": "normalized_palindrome",
+    "starter_code": "def normalized_palindrome(text):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          "А роза упала на лапу Азора"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "A man, a plan, a canal: Panama!"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "Hello"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "!!!"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "12 21"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "АБв"
+        ],
+        "expected": false
+      }
+    ],
+    "level": 6
+  }
+},
+{
+  "model": "task.task",
+  "pk": 28,
+  "fields": {
+    "title": "Число-палиндром",
+    "description": "Напишите функцию is_number_palindrome(n).\n\nВерните True, если десятичная запись целого n — палиндром. Отрицательные числа не являются палиндромами.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: is_number_palindrome(121) → True",
+    "number": 3,
+    "function_name": "is_number_palindrome",
+    "starter_code": "def is_number_palindrome(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          121
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          -121
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          10
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          1221
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": true
+      }
+    ],
+    "level": 6
+  }
+},
+{
+  "model": "task.task",
+  "pk": 29,
+  "fields": {
+    "title": "Палиндромы в списке",
+    "description": "Напишите функцию palindrome_words(words).\n\nВерните новый список строк-палиндромов из words, сохранив порядок и повторы. Сравнение учитывает регистр; пустая строка подходит.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: palindrome_words(['level', 'cat', 'radar']) → ['level', 'radar']",
+    "number": 4,
+    "function_name": "palindrome_words",
+    "starter_code": "def palindrome_words(words):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            "level",
+            "cat",
+            "radar"
+          ]
+        ],
+        "expected": [
+          "level",
+          "radar"
+        ]
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "",
+            "a",
+            "ab"
+          ]
+        ],
+        "expected": [
+          "",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          [
+            "Level",
+            "noon"
+          ]
+        ],
+        "expected": [
+          "noon"
+        ]
+      },
+      {
+        "input": [
+          [
+            "aa",
+            "aa"
+          ]
+        ],
+        "expected": [
+          "aa",
+          "aa"
+        ]
+      },
+      {
+        "input": [
+          [
+            "кот",
+            "топот"
+          ]
+        ],
+        "expected": [
+          "топот"
+        ]
+      }
+    ],
+    "level": 6
+  }
+},
+{
+  "model": "task.task",
+  "pk": 30,
+  "fields": {
+    "title": "Самая длинная подстрока-палиндром",
+    "description": "Напишите функцию longest_palindrome(text).\n\nВерните самую длинную непрерывную подстроку-палиндром с учётом регистра. При равной длине выберите ту, что начинается раньше. Для пустой строки верните \"\". Длина строки не превышает 100.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: longest_palindrome('babad') → 'bab'",
+    "number": 5,
+    "function_name": "longest_palindrome",
+    "starter_code": "def longest_palindrome(text):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          "babad"
+        ],
+        "expected": "bab"
+      },
+      {
+        "input": [
+          "cbbd"
+        ],
+        "expected": "bb"
+      },
+      {
+        "input": [
+          ""
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "abc"
+        ],
+        "expected": "a"
+      },
+      {
+        "input": [
+          "abba"
+        ],
+        "expected": "abba"
+      },
+      {
+        "input": [
+          "abacdfgdcaba"
+        ],
+        "expected": "aba"
+      },
+      {
+        "input": [
+          "Aa"
+        ],
+        "expected": "A"
+      }
+    ],
+    "level": 6
+  }
+},
+{
+  "model": "task.task",
+  "pk": 31,
+  "fields": {
+    "title": "Удаление повторяющихся элементов",
+    "description": "Напишите функцию remove_duplicates(numbers).\n\nВерните новый список целых чисел без повторений. Сохраните порядок первого появления каждого элемента.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: remove_duplicates([1, 2, 2, 3, 1]) → [1, 2, 3]",
+    "number": 1,
+    "function_name": "remove_duplicates",
+    "starter_code": "def remove_duplicates(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            2,
+            3,
+            1
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            -1,
+            -1,
+            0,
+            1
+          ]
+        ],
+        "expected": [
+          -1,
+          0,
+          1
+        ]
+      },
+      {
+        "input": [
+          [
+            3,
+            2,
+            3,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          3,
+          2,
+          1
+        ]
+      }
+    ],
+    "level": 7
+  }
+},
+{
+  "model": "task.task",
+  "pk": 32,
+  "fields": {
+    "title": "Количество лишних повторов",
+    "description": "Напишите функцию count_duplicates(numbers).\n\nВерните количество элементов, которые пришлось бы удалить, чтобы каждое значение осталось один раз. Для [5, 5, 5] ответ 2.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: count_duplicates([1, 2, 2, 3, 1]) → 2",
+    "number": 2,
+    "function_name": "count_duplicates",
+    "starter_code": "def count_duplicates(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            2,
+            3,
+            1
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            -1,
+            -1
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            7
+          ]
+        ],
+        "expected": 0
+      }
+    ],
+    "level": 7
+  }
+},
+{
+  "model": "task.task",
+  "pk": 33,
+  "fields": {
+    "title": "Элементы без повторений",
+    "description": "Напишите функцию unique_once(numbers).\n\nВерните список значений, встречающихся в исходном списке ровно один раз. Сохраните исходный порядок.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: unique_once([1, 2, 2, 3, 1]) → [3]",
+    "number": 3,
+    "function_name": "unique_once",
+    "starter_code": "def unique_once(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            2,
+            3,
+            1
+          ]
+        ],
+        "expected": [
+          3
+        ]
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            4,
+            4
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          3,
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            -1,
+            0,
+            -1,
+            2
+          ]
+        ],
+        "expected": [
+          0,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            5
+          ]
+        ],
+        "expected": [
+          5
+        ]
+      }
+    ],
+    "level": 7
+  }
+},
+{
+  "model": "task.task",
+  "pk": 34,
+  "fields": {
+    "title": "Есть ли повторы",
+    "description": "Напишите функцию has_duplicates(numbers).\n\nВерните True, если в списке есть хотя бы два одинаковых значения, иначе False.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: has_duplicates([1, 2, 1]) → True",
+    "number": 4,
+    "function_name": "has_duplicates",
+    "starter_code": "def has_duplicates(numbers):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          []
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          [
+            0,
+            0
+          ]
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          [
+            7
+          ]
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          [
+            -1,
+            -2,
+            -1
+          ]
+        ],
+        "expected": true
+      }
+    ],
+    "level": 7
+  }
+},
+{
+  "model": "task.task",
+  "pk": 35,
+  "fields": {
+    "title": "Общие элементы без повторов",
+    "description": "Напишите функцию intersection_unique(first, second).\n\nВерните значения, присутствующие в обоих списках. В ответе каждое значение должно встречаться один раз, в порядке первого появления в first.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: intersection_unique([3, 1, 3, 2], [2, 3]) → [3, 2]",
+    "number": 5,
+    "function_name": "intersection_unique",
+    "starter_code": "def intersection_unique(first, second):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            3,
+            1,
+            3,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          3,
+          2
+        ]
+      },
+      {
+        "input": [
+          [],
+          [
+            1
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "expected": [
+          1
+        ]
+      },
+      {
+        "input": [
+          [
+            -1,
+            0,
+            2
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "expected": [
+          -1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "expected": []
+      }
+    ],
+    "level": 7
+  }
+},
+{
+  "model": "task.task",
+  "pk": 36,
+  "fields": {
+    "title": "Подсчёт символов в строке",
+    "description": "Напишите функцию char_count(text).\n\nВерните словарь: ключ — символ строки, значение — количество его появлений. Учитывайте регистр, пробелы и знаки. Порядок ключей не важен.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: char_count('hello') → {'h': 1, 'e': 1, 'l': 2, 'o': 1}",
+    "number": 1,
+    "function_name": "char_count",
+    "starter_code": "def char_count(text):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          "hello"
+        ],
+        "expected": {
+          "h": 1,
+          "e": 1,
+          "l": 2,
+          "o": 1
+        }
+      },
+      {
+        "input": [
+          "aaa"
+        ],
+        "expected": {
+          "a": 3
+        }
+      },
+      {
+        "input": [
+          ""
+        ],
+        "expected": {}
+      },
+      {
+        "input": [
+          "abc"
+        ],
+        "expected": {
+          "a": 1,
+          "b": 1,
+          "c": 1
+        }
+      },
+      {
+        "input": [
+          "a a"
+        ],
+        "expected": {
+          "a": 2,
+          " ": 1
+        }
+      },
+      {
+        "input": [
+          "Aa"
+        ],
+        "expected": {
+          "A": 1,
+          "a": 1
+        }
+      }
+    ],
+    "level": 8
+  }
+},
+{
+  "model": "task.task",
+  "pk": 37,
+  "fields": {
+    "title": "Самый частый символ",
+    "description": "Напишите функцию most_frequent_char(text).\n\nВерните самый частый символ с учётом регистра, пробелов и знаков. При равенстве частот выберите символ, встретившийся раньше. Для пустой строки верните \"\".\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: most_frequent_char('hello') → 'l'",
+    "number": 2,
+    "function_name": "most_frequent_char",
+    "starter_code": "def most_frequent_char(text):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          "hello"
+        ],
+        "expected": "l"
+      },
+      {
+        "input": [
+          "baba"
+        ],
+        "expected": "b"
+      },
+      {
+        "input": [
+          ""
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "Aa"
+        ],
+        "expected": "A"
+      },
+      {
+        "input": [
+          " a "
+        ],
+        "expected": " "
+      },
+      {
+        "input": [
+          "топот"
+        ],
+        "expected": "т"
+      }
+    ],
+    "level": 8
+  }
+},
+{
+  "model": "task.task",
+  "pk": 38,
+  "fields": {
+    "title": "Частоты букв без учёта регистра",
+    "description": "Напишите функцию count_letters(text).\n\nВерните словарь частот только букв (str.isalpha), переведённых в нижний регистр (str.lower). Цифры, пробелы и знаки игнорируйте. Порядок ключей не важен.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: count_letters('Hello, 123!') → {'h': 1, 'e': 1, 'l': 2, 'o': 1}",
+    "number": 3,
+    "function_name": "count_letters",
+    "starter_code": "def count_letters(text):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          "Hello, 123!"
+        ],
+        "expected": {
+          "h": 1,
+          "e": 1,
+          "l": 2,
+          "o": 1
+        }
+      },
+      {
+        "input": [
+          "Аа Бб!"
+        ],
+        "expected": {
+          "а": 2,
+          "б": 2
+        }
+      },
+      {
+        "input": [
+          "123!?"
+        ],
+        "expected": {}
+      },
+      {
+        "input": [
+          ""
+        ],
+        "expected": {}
+      },
+      {
+        "input": [
+          "AaA"
+        ],
+        "expected": {
+          "a": 3
+        }
+      },
+      {
+        "input": [
+          "x y X"
+        ],
+        "expected": {
+          "x": 2,
+          "y": 1
+        }
+      }
+    ],
+    "level": 8
+  }
+},
+{
+  "model": "task.task",
+  "pk": 39,
+  "fields": {
+    "title": "Первый неповторяющийся символ",
+    "description": "Напишите функцию first_unique_char(text).\n\nВерните первый символ, который встречается в строке ровно один раз. Учитывайте регистр и пробелы. Если такого символа нет, верните \"\".\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: first_unique_char('swiss') → 'w'",
+    "number": 4,
+    "function_name": "first_unique_char",
+    "starter_code": "def first_unique_char(text):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          "swiss"
+        ],
+        "expected": "w"
+      },
+      {
+        "input": [
+          "aabb"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          ""
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "Aa"
+        ],
+        "expected": "A"
+      },
+      {
+        "input": [
+          "a a"
+        ],
+        "expected": " "
+      },
+      {
+        "input": [
+          "топотк"
+        ],
+        "expected": "п"
+      }
+    ],
+    "level": 8
+  }
+},
+{
+  "model": "task.task",
+  "pk": 40,
+  "fields": {
+    "title": "Частоты слов",
+    "description": "Напишите функцию word_count(text).\n\nРазделите строку по пробельным символам (str.split), переведите слова в нижний регистр и верните словарь их частот. Знаки препинания внутри слов не удаляйте. Порядок ключей не важен.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: word_count('Кот кот пёс') → {'кот': 2, 'пёс': 1}",
+    "number": 5,
+    "function_name": "word_count",
+    "starter_code": "def word_count(text):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          "Кот кот пёс"
+        ],
+        "expected": {
+          "кот": 2,
+          "пёс": 1
+        }
+      },
+      {
+        "input": [
+          ""
+        ],
+        "expected": {}
+      },
+      {
+        "input": [
+          "  \t\n "
+        ],
+        "expected": {}
+      },
+      {
+        "input": [
+          "One\tTWO\none"
+        ],
+        "expected": {
+          "one": 2,
+          "two": 1
+        }
+      },
+      {
+        "input": [
+          "кот, кот"
+        ],
+        "expected": {
+          "кот,": 1,
+          "кот": 1
+        }
+      },
+      {
+        "input": [
+          "A a A"
+        ],
+        "expected": {
+          "a": 3
+        }
+      }
+    ],
+    "level": 8
+  }
+},
+{
+  "model": "task.task",
+  "pk": 41,
+  "fields": {
+    "title": "Проверка простого числа",
+    "description": "Напишите функцию is_prime(n).\n\nВерните True, если целое число n простое, иначе False. Простое число больше 1 и имеет ровно два положительных делителя. В тестах |n| ≤ 10000.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: is_prime(2) → True",
+    "number": 1,
+    "function_name": "is_prime",
+    "starter_code": "def is_prime(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          2
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          4
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          17
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          -7
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          49
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          97
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          100
+        ],
+        "expected": false
+      }
+    ],
+    "level": 9
+  }
+},
+{
+  "model": "task.task",
+  "pk": 42,
+  "fields": {
+    "title": "Простые числа до границы",
+    "description": "Напишите функцию primes_up_to(n).\n\nВерните список всех простых чисел от 2 до n включительно по возрастанию. Целое n ≤ 500; если n < 2, верните пустой список.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: primes_up_to(10) → [2, 3, 5, 7]",
+    "number": 2,
+    "function_name": "primes_up_to",
+    "starter_code": "def primes_up_to(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          10
+        ],
+        "expected": [
+          2,
+          3,
+          5,
+          7
+        ]
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          2
+        ],
+        "expected": [
+          2
+        ]
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          -5
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          20
+        ],
+        "expected": [
+          2,
+          3,
+          5,
+          7,
+          11,
+          13,
+          17,
+          19
+        ]
+      }
+    ],
+    "level": 9
+  }
+},
+{
+  "model": "task.task",
+  "pk": 43,
+  "fields": {
+    "title": "Количество простых на отрезке",
+    "description": "Напишите функцию count_primes(a, b).\n\nВерните количество простых чисел между целыми a и b включительно. Границы могут идти в любом порядке, |a| и |b| не превышают 500.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: count_primes(1, 10) → 4",
+    "number": 3,
+    "function_name": "count_primes",
+    "starter_code": "def count_primes(a, b):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          1,
+          10
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          10,
+          1
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          -5,
+          3
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          14,
+          16
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          2,
+          2
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          -10,
+          -1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          10,
+          20
+        ],
+        "expected": 4
+      }
+    ],
+    "level": 9
+  }
+},
+{
+  "model": "task.task",
+  "pk": 44,
+  "fields": {
+    "title": "Следующее простое число",
+    "description": "Напишите функцию next_prime(n).\n\nВерните наименьшее простое число, строго большее целого n. В тестах |n| ≤ 10000.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: next_prime(7) → 11",
+    "number": 4,
+    "function_name": "next_prime",
+    "starter_code": "def next_prime(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          7
+        ],
+        "expected": 11
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          -10
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          14
+        ],
+        "expected": 17
+      },
+      {
+        "input": [
+          97
+        ],
+        "expected": 101
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": 2
+      }
+    ],
+    "level": 9
+  }
+},
+{
+  "model": "task.task",
+  "pk": 45,
+  "fields": {
+    "title": "Разложение на простые множители",
+    "description": "Напишите функцию prime_factors(n).\n\nВерните простые множители целого n по возрастанию, включая повторы. 1 ≤ n ≤ 10000. Для 1 верните пустой список.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: prime_factors(60) → [2, 2, 3, 5]",
+    "number": 5,
+    "function_name": "prime_factors",
+    "starter_code": "def prime_factors(n):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          60
+        ],
+        "expected": [
+          2,
+          2,
+          3,
+          5
+        ]
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          13
+        ],
+        "expected": [
+          13
+        ]
+      },
+      {
+        "input": [
+          16
+        ],
+        "expected": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "input": [
+          49
+        ],
+        "expected": [
+          7,
+          7
+        ]
+      },
+      {
+        "input": [
+          100
+        ],
+        "expected": [
+          2,
+          2,
+          5,
+          5
+        ]
+      }
+    ],
+    "level": 9
+  }
+},
+{
+  "model": "task.task",
+  "pk": 46,
+  "fields": {
+    "title": "Поиск двух чисел с заданной суммой",
+    "description": "Напишите функцию two_sum(numbers, target).\n\nВерните индексы [i, j] двух элементов с суммой target, где i < j. Один элемент нельзя использовать дважды. Если пар несколько, выберите минимальный j, затем минимальный i. Если пары нет, верните [].\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: two_sum([2, 7, 11, 15], 9) → [0, 1]",
+    "number": 1,
+    "function_name": "two_sum",
+    "starter_code": "def two_sum(numbers, target):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            2,
+            7,
+            11,
+            15
+          ],
+          9
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      },
+      {
+        "input": [
+          [
+            3,
+            2,
+            4
+          ],
+          6
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            -1,
+            -2,
+            -3,
+            -4
+          ],
+          -6
+        ],
+        "expected": [
+          1,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            0,
+            4,
+            3,
+            0
+          ],
+          0
+        ],
+        "expected": [
+          0,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            5,
+            1,
+            5
+          ],
+          6
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      },
+      {
+        "input": [
+          [],
+          5
+        ],
+        "expected": []
+      }
+    ],
+    "level": 10
+  }
+},
+{
+  "model": "task.task",
+  "pk": 47,
+  "fields": {
+    "title": "Есть ли пара с нужной суммой",
+    "description": "Напишите функцию has_pair(numbers, target).\n\nВерните True, если два элемента с разными индексами имеют сумму target, иначе False.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: has_pair([2, 7, 11], 9) → True",
+    "number": 2,
+    "function_name": "has_pair",
+    "starter_code": "def has_pair(numbers, target):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            2,
+            7,
+            11
+          ],
+          9
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          [
+            3
+          ],
+          6
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          [
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          [],
+          0
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          [
+            -2,
+            5,
+            0
+          ],
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          10
+        ],
+        "expected": false
+      }
+    ],
+    "level": 10
+  }
+},
+{
+  "model": "task.task",
+  "pk": 48,
+  "fields": {
+    "title": "Количество пар с заданной суммой",
+    "description": "Напишите функцию count_pairs(numbers, target).\n\nВерните количество пар индексов i < j с суммой target. Разные пары индексов считаются отдельно, даже если значения совпадают.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: count_pairs([1, 1, 1], 2) → 3",
+    "number": 3,
+    "function_name": "count_pairs",
+    "starter_code": "def count_pairs(numbers, target):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          5
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [],
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          0
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            -1,
+            1,
+            -1,
+            1
+          ],
+          0
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          10
+        ],
+        "expected": 0
+      }
+    ],
+    "level": 10
+  }
+},
+{
+  "model": "task.task",
+  "pk": 49,
+  "fields": {
+    "title": "Значения найденной пары",
+    "description": "Напишите функцию pair_values(numbers, target).\n\nНайдите пару по правилу: минимальный второй индекс j, затем минимальный первый индекс i, i < j. Верните сами значения [numbers[i], numbers[j]]. Если пары нет, верните [].\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: pair_values([2, 7, 11], 9) → [2, 7]",
+    "number": 4,
+    "function_name": "pair_values",
+    "starter_code": "def pair_values(numbers, target):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            2,
+            7,
+            11
+          ],
+          9
+        ],
+        "expected": [
+          2,
+          7
+        ]
+      },
+      {
+        "input": [
+          [
+            3,
+            2,
+            4
+          ],
+          6
+        ],
+        "expected": [
+          2,
+          4
+        ]
+      },
+      {
+        "input": [
+          [
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": [
+          3,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            -3,
+            1,
+            3,
+            5
+          ],
+          2
+        ],
+        "expected": [
+          -3,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            0,
+            4,
+            3,
+            0
+          ],
+          0
+        ],
+        "expected": [
+          0,
+          0
+        ]
+      }
+    ],
+    "level": 10
+  }
+},
+{
+  "model": "task.task",
+  "pk": 50,
+  "fields": {
+    "title": "Пара с ближайшей суммой",
+    "description": "Напишите функцию closest_pair(numbers, target).\n\nВерните индексы [i, j], i < j, для которых модуль разности numbers[i] + numbers[j] - target минимален. При равенстве выберите минимальный j, затем минимальный i. Если элементов меньше двух, верните []. Длина списка не превышает 100.\n\nВерните результат через return. Вывод через print не заменяет return.\n\nПример: closest_pair([1, 4, 8], 10) → [0, 2]",
+    "number": 5,
+    "function_name": "closest_pair",
+    "starter_code": "def closest_pair(numbers, target):\n    pass\n",
+    "tests": [
+      {
+        "input": [
+          [
+            1,
+            4,
+            8
+          ],
+          10
+        ],
+        "expected": [
+          0,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ],
+          5
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      },
+      {
+        "input": [
+          [],
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            7
+          ],
+          14
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      },
+      {
+        "input": [
+          [
+            -5,
+            -2,
+            4
+          ],
+          0
+        ],
+        "expected": [
+          0,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1
+          ],
+          4
+        ],
+        "expected": [
+          0,
+          1
+        ]
+      }
+    ],
+    "level": 10
+  }
+}
+]

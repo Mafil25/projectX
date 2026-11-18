@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ level.title }} — ProjectX</title>
+    <link rel="stylesheet" href="{% static 'task/css/level.css' %}">
+    <link rel="stylesheet" href="{% static 'task/css/task-navigation.css' %}">
+</head>
+<body data-user-id="{{ request.user.pk }}">
+<main>
+    <div class="level-content">
+        <header id="level-top">
+            <a class="back" href="{% url 'main' %}">
+                <img src="{% static 'task/img/Arrow-right.png' %}" alt="" aria-hidden="true">
+                <span>Назад к темам</span>
+            </a>
+            <p class="eyebrow">Уровень {{ level.number }}</p>
+            <h1>{{ level.title }}</h1>
+            <div class="description">{{ level.description|linebreaks }}</div>
+        </header>
+        <div class="tasks">
+            {% for task in tasks %}
+            <section class="task-panel" id="task-{{ task.pk }}" data-task-panel="{{ task.pk }}" aria-labelledby="task-title-{{ task.pk }}" tabindex="-1">
+                <header class="task-heading">
+                    <div>
+                        <p class="eyebrow">Задание {{ task.number }}</p>
+                        <h2 id="task-title-{{ task.pk }}">{{ task.title }}</h2>
+                    </div>
+                    <span class="task-badge {% if task.is_completed %}completed{% endif %}" data-task-badge="{{ task.pk }}">{% if task.is_completed %}✓ Выполнено{% else %}Ещё не выполнено{% endif %}</span>
+                </header>
+                <div class="description task-description">{{ task.description|linebreaks }}</div>
+                <div class="editor-heading">
+                    <label for="code-fallback-{{ task.pk }}">Python Editor</label>
+                    <span data-editor-state>Простой редактор · Python 3</span>
+                </div>
+                <div class="code-editor" id="python-code-{{ task.pk }}" data-code-editor aria-label="Код задания {{ task.number }}" hidden></div>
+                <textarea class="code-fallback" id="code-fallback-{{ task.pk }}" data-code-fallback spellcheck="false" aria-label="Код задания {{ task.number }}">{{ task.starter_code }}</textarea>
+                <div class="editor-buttons">
+                    <button type="button" data-run>▶ Запустить</button>
+                    <button type="button" data-check>✓ Проверить задание</button>
+                </div>
+                <label class="field-heading" for="python-input-{{ task.pk }}">{% if task.function_name %}Аргументы функции (JSON-массив){% else %}Входные данные (Input){% endif %}</label>
+                <textarea class="python-input" id="python-input-{{ task.pk }}" data-python-input spellcheck="false">{{ task.initial_input }}</textarea>
+                <h3 class="field-heading">Результат запуска</h3>
+                <pre class="python-output" data-python-output>Здесь появится результат выполнения программы.</pre>
+                <h3 class="field-heading">Проверка задания</h3>
+                <p class="test-status" data-test-status role="status" aria-live="polite">{% if task.is_completed %}✓ Задание выполнено{% else %}Задание ещё не выполнено{% endif %}</p>
+            </section>
+            {% empty %}
+            <p class="empty">В этом уровне пока нет заданий.</p>
+            {% endfor %}
+        </div>
+        <section class="level-summary" id="level-summary" aria-label="Итоги уровня">
+            <h2>Итоги уровня</h2>
+            <p>Выполнено заданий: <span id="level-completed-count">{{ completed_tasks }}</span>/<span id="level-total-count">{{ total_tasks }}</span></p>
+            <ul class="summary-tasks">
+                {% for task in tasks %}
+                <li>
+                    <a href="#task-{{ task.pk }}">{{ task.number }}. {{ task.title }}</a>
+                    <span data-task-summary="{{ task.pk }}" class="{% if task.is_completed %}completed{% endif %}">{% if task.is_completed %}✓ Выполнено{% else %}Ещё не выполнено{% endif %}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            <p id="level-completion-status" class="{% if is_completed %}completed{% endif %}" role="status">{% if is_completed %}✓ Уровень завершён{% elif tasks %}Выполни все задания, чтобы завершить уровень.{% else %}Задания скоро появятся.{% endif %}</p>
+        </section>
+    </div>
+    {% include 'task/includes/task_navigation.html' %}
+</main>
+<form hidden>{% csrf_token %}</form>
+{{ task_configs|json_script:"level-task-data" }}
+<script src="{% static 'task/js/task-progress.js' %}" defer></script>
+<script src="{% static 'task/js/level.js' %}" data-worker-url="{% static 'task/js/python-worker.js' %}" defer></script>
+</body>
+</html>

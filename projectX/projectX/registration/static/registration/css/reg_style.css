@@ -68,7 +68,7 @@ main .line-2 {
 
 main .info-1 {
   display: grid;
-  grid: repeat(2, 70px) / 1fr 1fr;
+  grid: 70px / 1fr 1fr;
   column-gap: 40px;
   row-gap: 20px;
 }
@@ -84,12 +84,23 @@ main .info input {
   color: #535151;
 }
 
+main .info input:-webkit-autofill,
+main .info input:-webkit-autofill:hover,
+main .info input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #f1f1f0 inset;
+  -webkit-text-fill-color: #535151;
+}
+
 main .info div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: #989898;
   font-weight: 500;
+}
+
+main .info input.err {
+  border: 1px solid #df4d50;
 }
 
 main .info-2 {
@@ -99,10 +110,20 @@ main .info-2 {
 }
 
 main .info-2 div {
-  height: 70px;
+  min-height: 70px;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
+main .info-2 input { flex-shrink: 0; }
+main .field-errors { color: #df4d50; font-size: 13px; font-weight: 400; line-height: 1.4; }
+main .field-errors li + li { margin-top: 4px; }
+main .field-errors[hidden] { display: none; }
 
+main .content_error {
+  color: #df4d50;
+  margin-top: 10px;
+}
 
 /* __________ */
 

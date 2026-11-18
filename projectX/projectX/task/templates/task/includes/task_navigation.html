@@ -1,0 +1,21 @@
+<aside class="sidebar" aria-label="Задания уровня">
+    <a class="sidebar-heading" href="#level-top">Задания уровня</a>
+    <ol class="sidebar-tasks">
+        {% for item in tasks %}
+        <li>
+            <a href="#task-{{ item.pk }}"
+               class="sidebar-task{% if item.is_completed %} is-completed{% endif %}"
+               data-task-link="{{ item.pk }}"
+               {% if forloop.first %}aria-current="location"{% endif %}>
+                <span class="sidebar-number">{{ item.number }}</span>
+                <span class="sidebar-task-title">{{ item.title }}</span>
+                <span class="sidebar-task-status" data-task-status="{{ item.pk }}"
+                      aria-label="{% if item.is_completed %}Выполнено{% else %}Не выполнено{% endif %}">{% if item.is_completed %}✓{% else %}○{% endif %}</span>
+            </a>
+        </li>
+        {% empty %}
+        <li class="sidebar-empty">Задания скоро появятся.</li>
+        {% endfor %}
+    </ol>
+    <a class="sidebar-summary" href="#level-summary">Итоги уровня ↓</a>
+</aside>

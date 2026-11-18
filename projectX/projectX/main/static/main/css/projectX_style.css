@@ -1,3 +1,6 @@
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
 body {
   background-color: #ededec;
   padding: 0 320px;
@@ -341,9 +344,15 @@ nav .content_button:hover p {
 }
 
 .hero .stat {
-  width: 470px;
-  height: 230px;
-  background-image: url("../img/back.png");
+  width: 430px;
+  height: 214px;
+  flex-shrink: 0;
+  max-width: 100%;
+  background-color: #282727;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, .12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, .12) 1px, transparent 1px);
+  background-size: 22px 22px;
   border-radius: 30px;
 }
 
@@ -352,24 +361,28 @@ nav .content_button:hover p {
 .stat {
   display: flex;
   flex-direction: column;
-  padding: 20px 30px;
+  padding: 18px 28px 28px;
+  font-family: Arial, sans-serif;
 }
 
 .stat .text {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .stat .text_progress {
-  color: #989898;
-  font-weight: 500;
+  color: #a1a1a1;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17px;
 }
 
 .stat .text_os {
   color: #fff;
   font-weight: 700;
   font-size: 18px;
+  line-height: 21px;
 }
 
 /* ___________ */
@@ -380,14 +393,16 @@ nav .content_button:hover p {
 
 .stat-vis {
   display: flex;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
+  margin-top: 14px;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
 }
 
 
 .stat .vis_content {
-  width: 260px;
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -400,30 +415,69 @@ nav .content_button:hover p {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  position: relative;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #888;
 }
-
-.stat .vis_content_text-1::after {
-  content: "";
-  width: 100%;
-  height: 1px;
-  border-radius: 10px;
-  background-color: #989898;
-  position: absolute;
-  top: 24px;
-}
-
 
 .stat .vis_content_text-2 {
-  margin-top: 20px;
+  margin-top: 11px;
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
 .stat .vis_content {
-  color: #989898;
+  color: #a1a1a1;
+  font-size: 14px;
+  line-height: 18px;
 }
+
+.stat .vis_content_text-1 p:last-child,
+.stat .vis_content_text-2 p:last-child {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.overall-progress {
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.overall-progress-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  fill: none;
+  stroke-width: 4;
+}
+
+.overall-progress-track { stroke: #414141; }
+.overall-progress-fill { stroke: #dedede; stroke-linecap: round; }
+.overall-progress-value { display: flex; align-items: center; color: #fff; }
+.overall-progress-value strong { font-size: 32px; font-weight: 700; line-height: 1; }
+.overall-progress-unit { margin-top: -10px; margin-left: 1px; font-size: 14px; }
+
+@media (max-width: 540px) {
+  .hero .stat { height: auto; min-height: 214px; padding: 20px; }
+  .stat-vis { gap: 18px; }
+  .overall-progress { width: 100px; height: 100px; }
+  .stat .vis_content { font-size: 13px; }
+}
+
+
+
+
+
 
 /* ____________________________________ */
 
@@ -443,6 +497,7 @@ nav .content_button:hover p {
   margin-top: 40px;
   display: grid;
   grid: repeat(2, 300px) / repeat(4, 300px);
+  grid-auto-rows: 300px;
   row-gap: 40px;
 
 }
@@ -458,54 +513,96 @@ nav .content_button:hover p {
   font-size: 30px;
   font-weight: 700;
   color: #282626;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: auto;
+  flex-shrink: 0;
 }
 
 /* _________ */
 
 
 .level .mini-button {
-  align-self: end;
-  width: 60px;
-  height: 25px;
+  align-self: self-start;
+  width: auto;
+  min-width: 60px;
+  padding: 0 12px;
+  height: 30px;
   background-color: #EAE9E9;
   border-radius: 20px;
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 13px 19px 0 0;
+  flex-shrink: 0;
 }
 
 .level .main-content {
-  padding: 0 30px 30px 30px;
-  margin-top: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px;
+  margin-top: 0;
+  min-height: 0;
 }
 
 
-.level .cards .title {
 
-  width: 160px;
-}
+
 
 .level .title span {
   color: #989898;
 }
 
+
+.level .cards .title p {
+  min-width: 0;
+  flex: 1;
+  font-size: 26px;
+  line-height: 1.1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  overflow-wrap: normal;
+  word-break: normal;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+  hyphenate-character: "-";
+
+}
+
 .level .text {
+  flex: 1;
+  min-height: 0;
   margin-top: 12px;
+  overflow: hidden;
   font-size: 12px;
-  font-weight: 400;
-  color: #989898;
   line-height: 14px;
+  color: #989898;
+}
+
+.level .text p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
 }
 
 /* _________ */
 
 
 .level .progress-bar {
-  margin-top: 20px;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 
 .level .content {
@@ -537,7 +634,8 @@ nav .content_button:hover p {
 .level .bar::after {
   position: absolute;
   content: "";
-  width: 15%;
+  width: var(--progress, 0%);
+  transition: width 0.3s ease;
   height: 5px;
   border-radius: 10px;
   background-color: #9C9B9B;
@@ -551,6 +649,7 @@ nav .content_button:hover p {
 .level .card-btn {
   margin-top: 20px;
   padding: 0 20px;
+  flex-shrink: 0;
   width: 100%;
   height: 35px;
   border-radius: 10px;
@@ -654,6 +753,29 @@ nav .content_button:hover p {
   background-color: #F29E6F;
 }
 
+.level .card-new .mini-button {
+  background-color: #EAE9E9;
+  color: #282626;
+}
+
+.level .card-completed .mini-button {
+  background-color: #85C99A;
+  color: #1F3B27;
+}
+
+.level .card-new .card-btn {
+  background-color: #6F6E6E;
+  color: #DFDFDF;
+}
+
+.level .card-new .card-btn::before {
+  background-color: #404040;
+}
+
+.level .card-new .imge {
+  filter: brightness(0) invert(.8);
+}
+
 .level .card-2 .text {
   color: #DFDFDF;
 }
@@ -686,6 +808,7 @@ nav .content_button:hover p {
 
 footer {
   margin-top: 100px;
+  scroll-margin-top: 24px;
 }
 
 .footer-main {

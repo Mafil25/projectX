@@ -1,144 +1,171 @@
-{% load static %}
+{% load static text_filters %}
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%static '/main/css/reset.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="{% static '/main/css/projectX_style.css' %}">
-    <title>ProjectX</title>
-</head>
-
-<body>
-    <nav>
-        <div class="logo">
-            <a class="logo-a" href="">
-                <img class="logo_logotype" src="{% static '/main/img/X.png' %}" alt="">
-                <p>
-                    Project
-                    <span>X</span>
-                </p>
-            </a>
-        </div>
-        <div class="content">
-            <div class="content_navbar">
-                <a href="">Уроки</a>
-                <a href="">О сайте</a>
-                <a href="">Поддержка</a>
-            </div>
-    </nav>
-    <main>
-        <div class="hero">
-            <div class="content">
-                <div class="projx">
-                    <div class="content_title">
-                        <span>P</span>
-                        <span>r</span>
-                        <span>o</span>
-                        <span>j</span>
-                        <span>e</span>
-                        <span>c</span>
-                        <span>t</span>
-                        <span>X</span>
-                    </div>
-                    <span class="s">Space</span>
-                </div>
-                <div class="content_text">
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                        classical Latin.</p>
-                </div>
-            </div>
-            <div class="stat">
-                <div class="text">
-                    <p class="text_progress">Твой прогресс</p>
-                    <p class="text_os">Общая статистика</p>
-                </div>
-                <div class="stat-vis">
-                    <div class="vis_circle">
-                        <img src="{% static '/main/img/circle.png' %}" alt="">
-                    </div>
-                    <div class="vis_content">
-                        <div class="vis_content_text-1">
-                            <p>Пройдено тем</p>
-                            <p>{{completed_task}}/{{total_tasks}}</p>
-                        </div>
-                        <div class="vis_content_text-2">
-                            <p>Твой уровень</p>
-                            <p>B2</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="level">
-            <div class="title">
-                <p>
-                    Уровни
-                    <span>обучения</span>
-                </p>
-            </div>
-            <div class="cards">
-                {% for el in tasks %}
-                    <div class="card card-2">
-                        <div class="mini-button">ACTIVE</div>
-                        <div class="main-content">
-                            <div class="title">
-                                <p>
-                                    {{ el.title }}
-                                    <span>topic</span>
-                                </p>
-                            </div>
-                            <div class="text">
-                                <p>{{ el.description }}</p>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="content">
-                                    <p class="progress">Прогресс</p>
-                                    <p class="per">15%</p>
-                                </div>
-                                <div class="bar"></div>
-                            </div>
-                            <a href="{% url 'task_detail' el.pk %}" class="card-btn">
-                                <p>Перейти</p>
-                                <div class="imge">
-                                    <img src="{% static '/main/img/Arrow-right.png' %}" alt="">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="footer-main">
-            <div class="general">
-                <div class="general_logo">
-                    <img src="{% static '/main/img/X.png' %}" alt="">
-                    <p class="general_title">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{%static '/main/css/reset.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'main/css/projectX_style.css' %}">
+        <title>ProjectX</title>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <a class="logo-a" href="">
+                    <img class="logo_logotype" src="{% static '/main/img/X.png' %}" alt="">
+                    <p>
                         Project
                         <span>X</span>
                     </p>
+                </a>
+            </div>
+            <div class="content">
+                <div class="content_navbar">
+                    <a href="#about-site">О сайте</a>
+                    <a href="{% url 'log' %}">Войти</a>
                 </div>
-                <p class="general_text">Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
             </div>
-            <div class="dev">
-                <p class="dev_title">Depelopers</p>
-                <ul>
-                    <li>Lorem, ipsum.</li>
-                    <li>Lorem, ipsum dolor.</li>
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem, ipsum dolor.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="mini-text">Contrary to popular belief.</div>
-    </footer>
-</body>
-
-</html>
+            </nav>
+            <main>
+                <div class="hero">
+                    <div class="content">
+                        <div class="projx">
+                            <div class="content_title">
+                                <span>P</span>
+                                <span>r</span>
+                                <span>o</span>
+                                <span>j</span>
+                                <span>e</span>
+                                <span>c</span>
+                                <span>t</span>
+                                <span>X</span>
+                            </div>
+                            <span class="s">Space</span>
+                        </div>
+                        <div class="content_text">
+                            <p>
+                                Изучай Python шаг за шагом, решай практические задачи и развивай навыки программирования в собственном темпе.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="text">
+                            <p class="text_progress">Твой прогресс</p>
+                            <p class="text_os">Общая статистика</p>
+                        </div>
+                        <div class="stat-vis">
+                            <div
+                                class="overall-progress"
+                                role="progressbar"
+                                aria-label="Общий прогресс"
+                                aria-valuenow="{{ overall_percent }}"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                            >
+                                <svg class="overall-progress-ring" viewBox="0 0 112 112" aria-hidden="true">
+                                    <circle class="overall-progress-track" cx="56" cy="56" r="51"></circle>
+                                    <circle class="overall-progress-fill" cx="56" cy="56" r="51"
+                                        pathLength="100" stroke-dasharray="{{ overall_percent }} 100"
+                                        {% if not overall_percent %}visibility="hidden"{% endif %}></circle>
+                                </svg>
+                                <span class="overall-progress-value"><strong>{{ overall_percent }}</strong><span class="overall-progress-unit">%</span></span>
+                            </div>
+                            <div class="vis_content">
+                                <div class="vis_content_text-1">
+                                    <p>Выполнено заданий</p>
+                                    <p>{{completed_task}}/{{total_tasks}}</p>
+                                </div>
+                                <div class="vis_content_text-2">
+                                    <p>Завершено уровней</p>
+                                    <p>{{ completed_levels }}/{{ total_levels }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="level">
+                    <div class="title">
+                        <p>
+                            Уровни
+                            <span>обучения</span>
+                        </p>
+                    </div>
+                    <div class="cards">
+                        {% for el in levels %}
+                        <div class="card {% if el.is_completed %}card-2 card-completed{% elif el.completed_tasks %}card-2 card-in-progress{% else %}card-new{% endif %}">
+                            <div class="main-content">
+                                <div class="title">
+                                    <p lang="ru">
+                                        {{ el.title|hyphenate_ru }}
+                                    </p>
+                                    <div class="mini-button">
+                                        {% if el.is_completed %}
+                                            Завершён
+                                        {% elif el.completed_tasks %}
+                                            В процессе
+                                        {% else %}
+                                            Не начат
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>{{ el.description }}</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="content">
+                                        <p class="progress">
+                                            {{ el.completed_tasks }}/{{ el.total_tasks }}
+                                        </p>
+                                        <p class="per">{{ el.progress_percent }}%</p>
+                                    </div>
+                                    <div class="bar" style="--progress: {{ el.progress_percent }}%;"></div>
+                                </div>
+                                <a href="{% url 'level_detail' el.pk %}" class="card-btn">
+                                    <p>
+                                        {% if el.is_completed %}
+                                                Повторить
+                                            {% elif el.next_task %}
+                                                Продолжить
+                                            {% else %}
+                                                Открыть уровень
+                                            {% endif %}
+                                    </p>
+                                    <div class="imge">
+                                        <img src="{% static 'main/img/Arrow-right.png' %}" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </main>
+            <footer id="about-site" aria-label="О сайте" tabindex="-1">
+                <div class="footer-main">
+                    <div class="general">
+                        <div class="general_logo">
+                            <img src="{% static '/main/img/X.png' %}" alt="">
+                            <p class="general_title">
+                                Project
+                                <span>X</span>
+                            </p>
+                        </div>
+                        <p class="general_text">ProjectX — платформа для изучения Python. Проходи уровни, решай практические задания и следи за своим прогрессом.</p>
+                    </div>
+                    <div class="dev">
+                        <p class="dev_title">О сайте</p>
+                        <ul>
+                            <li>Уровни обучения Python</li>
+                            <li>Редактор кода в браузере</li>
+                            <li>Автоматическая проверка заданий</li>
+                            <li>Личный прогресс обучения</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mini-text">ProjectX — изучай Python шаг за шагом.</div>
+            </footer>
+        </body>
+    </html>
